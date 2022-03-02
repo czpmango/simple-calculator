@@ -1,0 +1,8 @@
+calculator
+lex.yy.c
+y.output  
+y.tab.c  
+*.o
+*.swp
+*.swo
+y.tab.h

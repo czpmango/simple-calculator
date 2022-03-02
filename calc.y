@@ -11,7 +11,7 @@ void yyerror(const char* msg) {}
 
 %%
 
-S   :   S E '\n'        { printf("ans = %d\n", $2); }
+S   :   S E '\n'        { printf("result = %d\n", $2); }
     |   /* empty */     { /* empty */ }
     ;
 
