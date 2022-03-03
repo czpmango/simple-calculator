@@ -12,4 +12,12 @@
   `yyparser()` 内置函数默认是无参数的，但可以通过 `%parse-param {param}` 来传递参数
 6. yylex   
   同5，`%lex-param` 可以对 `yylex()` 增加参数
+7. 用 %skeleton "file" 定义解析器骨架   
+   %skeleton "lalr1.cc"   
+   *lalr1 文法仅可分析带有一个超前扫描记号的输入字符串，这导致有些情况下 shift/reduce 或者 reduce/reduce 冲突无法被解决，可以考虑使用 GLR 算法解决，GLR 几乎是无害的，GLR 的时间复杂度可能是 O(n3) 或者是指数级*    
+   GLR 算法需要添加声明:   
+```
+%glr-parser
+%expect-rr 1
+```
 
