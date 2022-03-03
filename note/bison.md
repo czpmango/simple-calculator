@@ -20,4 +20,5 @@
 %glr-parser
 %expect-rr 1
 ```
+8. `%destructor` 用来防止发生错误时可能导致的内存泄漏,%union 中定义的指针类型的语义值内存仍需手动释放
 
